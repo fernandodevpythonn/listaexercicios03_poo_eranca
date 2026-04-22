@@ -1,8 +1,11 @@
-class Cliente(usuario):
-    def __init__(self,nome,senha,email):
-        super().__init__(nome,senha,email)
-        self.__senha = ""
-        self.__cpf = 0
-    @staticmethod
-    def validar_email(email):
-        return "@" in email and ".com" in email
+#login e compras
+
+class Cliente:
+    def __init__(self,nome = "sem nome",email = "sem email",perfil="sem perfil"):
+       self.nome = nome
+       self.__senha = 0
+       self.email = email
+       self.perfil = perfil
+    
+    def mostrar_cliente(self):
+        print(f"nome: {self.nome}")
