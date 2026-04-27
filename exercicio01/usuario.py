@@ -32,8 +32,15 @@ class Usuario:
       print(f"olá {self.nome} seja bem vindo(a)")
 
     def realizar_login(self):
+        self.nome = input("Nome:")
         self.email = input("Email: ")
         if self.email.isalpha():
             print(f"email{self.email} cadastrado")
         self.senha = input("Senha: ")
         print(f"senha {self.senha} cadastrada")
+        self.perfil = input("perfil: ")
+        print(f"perfil {self.perfil} cadastrado")
+    def mostrar_usuario(self):
+        print(f"nome: {self.nome}")
+        print(f"email: {self.email}")
+        print(f"perfil: {self.perfil}")
