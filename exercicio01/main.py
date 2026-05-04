@@ -3,7 +3,8 @@ from produtos import produto
 
 from cliente_vip import Cliente_vip
 clivip = Cliente_vip()
-
+from cliente import Cliente
+cli = Cliente()
 prod = produto()
 usu = Usuario()
 
@@ -23,19 +24,9 @@ def main():
                 usu.realizar_login()
             case "2":
                 if usu.perfil == "cliente":
-                    prod.mostrar_produtos()
-                    opc = input("qual produto deseja comprar? ")
-                    if opc in prod:
-                        print(f"produto {prod.nome} disponivel")
-                        print(f"valor original: {prod.valor_original}")
-                elif usu.perfil == "cliente vipe":
-                    prod.mostrar_produtos()
-                    opc = input("qual produto deseja comprar? ")
-                    if opc in prod:
-                        print(f"produto {produto} disponivel")
-                        print(f"valor promocao {prod.valor_promo}")
-                else:
-                    raise ValueError("erro: faça login primeiro")
+                 cli.fazer_compra_cliente()
+                elif usu.perfil == "cliente vip":
+                   clivip.fazer_compra_cliente_vip()
             case "3":
                  if usu.perfil == "administrador" or "adm":
                    prod.adicionar_produto()
@@ -48,7 +39,12 @@ def main():
                     raise ValueError("erro: perfil inválido")
             case "5":
                 if prod.nome != "sem nome":
-                 prod.mostrar_produtos()
+                  if usu.perfil == "cliente":
+                    prod.mostrar_produtos_cliente()
+                  elif usu.perfil == "cliente vip":
+                    prod.mostrar_produtos_cliente_vip()
+                  else:
+                    prod.mostrar_produtos()
                 else:
                     print("nenhum produto cadastrado")
 

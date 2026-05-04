@@ -18,26 +18,26 @@ class produto(Usuario):
          if self.perfil == "administrador" or "adm":
           self.nome = input("Nome: ")
           if self.nome.isalpha():
+             self.produtos["produto"] = self.nome
              print(f"{self.nome} cadastrado")
           else:
              raise ValueError("Erro: nome inválido")
-          self.tipo = input("tipo(promocao/normal): ")
-          if self.tipo.isalpha():
-             print(f"{self.tipo} adicionado")
-          else:
-             raise ValueError("Erro: tipo inválido")
           try:
-            if self.tipo == "normal":
-               self.valor_original = float(input("Valor: "))
-            elif self.tipo == "promocao":
-               self.valor_promo = float(input("valor: "))
+               self.valor_original = float(input("Valor original: "))
+               self.produtos["valornormal"] = self.valor_original
+               self.valor_promo = float(input("valor promoção: "))
+               if self.valor_promo <= self.valor_original:
+                self.produtos["valorpromo"] = self.valor_promo
+               else:
+                  ValueError("erro: valor de promoção precisa ser menor que o preço original")
           except ValueError:
              print("Erro: valor de produto inválido")
          else:
             raise ValueError("erro: precisa ser administrador para acessar esta página")
 
+    def mostrar_produtos_cliente(self):
+       print(f"{self.produtos["produto"]}, {self.produtos["valornormal"]}")
+    def mostrar_produtos_cliente_vip(self):
+       print(f"{self.produtos["produto"]}, {self.produtos["valorpromo"]}")
     def mostrar_produtos(self):
-        for chave,valor in self.produtos.items():
-           print(chave)
-           print(valor)
-     
+        print(self.produtos)
