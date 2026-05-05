@@ -1,11 +1,11 @@
 from usuario import Usuario
-from produtos import produto
+from produtos import Produto
 
 from cliente_vip import Cliente_vip
-clivip = Cliente_vip()
 from cliente import Cliente
+clivip = Cliente_vip()
 cli = Cliente()
-prod = produto()
+prod = Produto()
 usu = Usuario()
 
 def menu():
@@ -24,9 +24,11 @@ def main():
                 usu.realizar_login()
             case "2":
                 if usu.perfil == "cliente":
-                 cli.fazer_compra_cliente()
+                  prod.mostrar_produtos_cliente()
+                  cli.fazer_compra_cliente()
                 elif usu.perfil == "cliente vip":
-                   clivip.fazer_compra_cliente_vip()
+                  prod.mostrar_produtos_cliente_vip()
+                  clivip.fazer_compra_cliente_vip()
             case "3":
                  if usu.perfil == "administrador" or "adm":
                    prod.adicionar_produto()

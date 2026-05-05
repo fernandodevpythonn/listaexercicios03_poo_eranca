@@ -1,6 +1,6 @@
 from usuario import Usuario
 
-class produto(Usuario):
+class Produto(Usuario):
 
     def __init__(self, nome = "sem nome", valor_original = 0, valor_promo = 0, tipo = "sem tipo", perfil = "sem perfil"):
         super().__init__(perfil)
@@ -40,4 +40,4 @@ class produto(Usuario):
     def mostrar_produtos_cliente_vip(self):
        print(f"{self.produtos["produto"]}, {self.produtos["valorpromo"]}")
     def mostrar_produtos(self):
-        print(self.produtos)
+        print(f"{self.produtos["produto"]}, promoção: {self.produtos["valorpromo"]}, normal: {self.produtos["valornormal"]}")
