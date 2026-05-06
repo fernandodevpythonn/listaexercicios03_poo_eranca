@@ -14,8 +14,9 @@ class Cliente(Usuario):
             return True
         
     def fazer_compra_cliente(self):
+                    print(prod.nome)
                     opc = input("qual produto deseja comprar? ")
                     if self.perfil == "cliente":
-                     if opc in prod.produtos["produto"]:
+                     if opc == prod.nome:
                         print(f"produto {opc} disponivel")
                         print(f"valor original: {prod.valor_original}")
