@@ -5,4 +5,6 @@ class Pessoa:
         self.perfil = perfil
         self.email = email
         self.__senha = 0
-    
+    @property
+    def senha(self):
+        pass  

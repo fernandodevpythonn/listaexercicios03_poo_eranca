@@ -1,3 +1,5 @@
+from livro import Livro
+liv = Livro()
 class Produto():
     def __init__(self,nome="sem nome", valor = 0, tipo="sem tipo"):
         self.nome = nome
@@ -10,6 +12,8 @@ class Produto():
          self.nome = input("Nome do produto:")
          self.valor = float(input("Valor do produto: "))
          self.tipo = input("Tipo de produto(Eletrônico/Livro):")
+         if self.tipo == "livro":
+             liv.adicionar_livros(self.nome)
          if self.tipo == "eletronico" or self.tipo == "livro":
            Produto.notificacao(self.nome,self.tipo)
          else:
