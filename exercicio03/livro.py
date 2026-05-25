@@ -4,8 +4,8 @@ class Livro:
         self.livros = []
     @staticmethod
     def notificacao(nome):
-        pass
+        print(f"livro {nome} editado")
     def adicionar_livros(self,livro):
         self.livros.append(livro)
     def editar_livro(self):
-        pass
+       pass
