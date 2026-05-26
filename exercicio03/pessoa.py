@@ -19,10 +19,13 @@ class Pessoa:
         self.nome = input("Nome: ")
         if self.nome.isalpha():
             print(f"Nome {self.nome} cadastrado")
-        self.perfil = input("Perfil")
-        if self.perfil.isdigit():
-            raise ValueError("Erro: Perfil inválido")
+        self.perfil = input("Perfil: ")
+        if self.perfil.isalpha():
+            print(f"Perfil {self.perfil} cadastrado")
         self.email = input("Email: ")
         if not Pessoa.validar_email(self.email):
             raise ValueError("Email inválido")
         self.senha = input("Senha: ")
+    def mostrar_pessoa(self):
+        print(f"Nome: {self.nome.capitalize()}")
+        print(f"Perfil: {self.perfil.capitalize()}")
