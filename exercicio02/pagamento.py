@@ -1,9 +1,7 @@
 
-class pagamento:
-    def __init__(self,valor_pagamento = 0,num_conta = 0):
+class Pagamento:
+    def __init__(self,valor_pagamento,produto):
         self.valor_pagamento = valor_pagamento
-        self.num_conta = num_conta
-    
-    def realizar_compra(self):
-        self.num_conta = float(input("Número da conta que receberá o pagamento: "))
-        self.valor = float(input("valor do pagamento: "))
+        self.produto = produto
+    def realizar_pagamento(self):
+        print(f"{self.produto} no valor de R${self.valor_pagamento:,.2f} pago")

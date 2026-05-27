@@ -22,8 +22,6 @@ def main():
             case "3":
                 # if pess.perfil == "administrador":
                    prod.cadastrar_produto()
-                   if prod.tipo == "livro":
-                       liv.adicionar_livros()
                 # else:
                 #     raise ValueError("Erro: precisa ser um administrador para cadastrar um produto.")
             case "4":
