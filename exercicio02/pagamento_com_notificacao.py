@@ -1,5 +1,5 @@
-from pagamento import Pagamento
-from notificacao import Notificacao
+from .pagamento import Pagamento
+from .notificacao import Notificacao
 class Pagamento_com_notificacao(Pagamento,Notificacao):
   def __init__(self, valor_pagamento,produto):
     Pagamento.__init__(self,valor_pagamento,produto)
@@ -9,7 +9,3 @@ class Pagamento_com_notificacao(Pagamento,Notificacao):
     self.realizar_pagamento()
     self.notificar()
 
-produto = input("produto: ")
-valor = float(input("valor: "))
-transacao = Pagamento_com_notificacao(valor, produto)
-transacao.rodar()

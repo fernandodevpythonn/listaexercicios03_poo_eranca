@@ -1,5 +1,5 @@
-from cliente import Cliente
-from produtos import Produto
+from .cliente import Cliente
+from .produtos import Produto
 prod = Produto()
 
 class Cliente_vip(Cliente):

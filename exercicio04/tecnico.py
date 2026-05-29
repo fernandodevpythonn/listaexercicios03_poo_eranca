@@ -1,12 +1,19 @@
-from pessoa import Pessoa
+from .pessoa import Pessoa
 class Tecnico(Pessoa):
-    def __init__(self,nome,idade,perfil,senha):
-        super().__init__(nome,idade,perfil,senha)
+    def __init__(self,nome,perfil):
+        super().__init__(nome,perfil)
         self.dispositivo = ""
         self.cliente = ""
-    def mostrar_problema(self,cliente,dispositivo):
-        print(f"Problema com o {dispositivo} do(a) {cliente}, Técnico: {self.nome}")
-    
-tec = Tecnico("lucas",20,"suporte",12345)
-tec.login()
-tec.mostrar_problema("Vitor", "celular")
+        self.agenda = ""
+        self.agendas = []
+        self.clientes = []
+    def agendar(self,problema):
+        self.agenda = input("Data")
+        self.agendas.append(self.agenda)
+        cli = input("Cliente: ")
+        self.clientes.append(cli)
+        if cli in self.clientes:
+         print(f"Visita de {self.nome} marcada para {self.agenda}, com o cliente {cli} para resolver o problema de {problema}")
+    def mostrar_agendas(self):
+       print(f"Agendas: {self.agendas}")
+

@@ -1,13 +1,12 @@
 #login e compras
-from produtos import Produto
-from usuario import Usuario
+from .produtos import Produto
+from .usuario import Usuario
 prod = Produto()
 
 class Cliente(Usuario):
     def __init__(self,nome = "sem nome",email = "sem email",perfil="sem perfil"):
        super().__init__(perfil,nome,email)
     @staticmethod
-
     def validar_perfil(self):
         if self.perfil == "cliente":
             print("( cliente )")

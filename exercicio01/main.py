@@ -1,8 +1,8 @@
-from usuario import Usuario
-from produtos import Produto
+from .usuario import Usuario
+from .produtos import Produto
 
-from cliente_vip import Cliente_vip
-from cliente import Cliente
+from .cliente_vip import Cliente_vip
+from .cliente import Cliente
 clivip = Cliente_vip()
 cli = Cliente()
 prod = Produto()
@@ -16,7 +16,7 @@ def menu():
     print("5 - mostrar produtos")
     print("6 - Fechar sistema")
 
-def main():
+def main01():
     while True:
         menu()
         opcao = input("opção: ")
@@ -58,5 +58,3 @@ def main():
             case "6":
               print("sistema fechado")
               break
-if __name__ == "__main__":
-    main()

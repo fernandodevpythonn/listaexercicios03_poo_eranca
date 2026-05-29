@@ -1,6 +1,6 @@
-from pessoa import Pessoa
-from produto import Produto
-from livro import Livro
+from .pessoa import Pessoa
+from .produto import Produto
+from .livro import Livro
 liv = Livro()
 pess = Pessoa()
 prod = Produto()
@@ -10,7 +10,7 @@ def menu():
     print("3 - Cadastrar produto")
     print("4 - Mostrar produto")
 
-def main():
+def main03():
    while True:
        menu()
        opc = input("opção: ")
@@ -26,5 +26,3 @@ def main():
                 #     raise ValueError("Erro: precisa ser um administrador para cadastrar um produto.")
             case "4":
                prod.mostrar_produtos()
-if __name__ == "__main__":
-    main()

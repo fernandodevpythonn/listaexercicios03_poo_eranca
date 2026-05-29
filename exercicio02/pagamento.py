@@ -1,4 +1,3 @@
-
 class Pagamento:
     def __init__(self,valor_pagamento,produto):
         self.valor_pagamento = valor_pagamento
